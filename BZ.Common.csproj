@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7329C6D5-E45A-45C3-8E62-5F754FBC9E69}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BZ.Common</RootNamespace>
+    <AssemblyName>BZ.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarcodeLib, Version=1.0.0.23, Culture=neutral, PublicKeyToken=5f09bda868cc39e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\BarcodeLib.1.0.0.23\lib\net20\BarcodeLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>SolutionItems\QrCode.Net.0.4.0.0\lib\net35\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>SolutionItems\log4net.2.0.8\lib\net35-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>SolutionItems\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>SolutionItems\NPOI.2.3.0\lib\net20\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>SolutionItems\NPOI.2.3.0\lib\net20\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>SolutionItems\NPOI.2.3.0\lib\net20\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>SolutionItems\NPOI.2.3.0\lib\net20\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Delegate\TaskServerDisplayLog.cs" />
+    <Compile Include="Json帮助类\JsonHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="导出Excel\ExcelHelper.cs" />
+    <Compile Include="导出Excel\Exporter.cs" />
+    <Compile Include="导出Excel\Import.cs" />
+    <Compile Include="导出Excel\NPOIHelper.cs" />
+    <Compile Include="打印机类\BluetoothPrintHelper.cs" />
+    <Compile Include="打印机类\ZebraHelper.cs" />
+    <Compile Include="打印机类\ZebraPrintHelper.cs" />
+    <Compile Include="日志操作类\Log4Helper.cs" />
+    <Compile Include="日志操作类\LogHelper.cs" />
+    <Compile Include="服务层操作类\GridPager.cs" />
+    <Compile Include="服务层操作类\ServiceResult.cs" />
+    <Compile Include="杂项帮助类\AssembleHelper.cs" />
+    <Compile Include="缓存_Cookie_Session\CacheHelper.cs" />
+    <Compile Include="缓存_Cookie_Session\CookieHelper.cs" />
+    <Compile Include="缓存_Cookie_Session\SessionHelper.cs" />
+    <Compile Include="条码类\BarCodeHelper.cs" />
+    <Compile Include="条码类\QrCodeHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="加密解密类\Base64Cryption.cs" />
+    <Compile Include="加密解密类\DESCryption.cs" />
+    <Compile Include="加密解密类\MD5Cryption.cs" />
+    <Compile Include="加密解密类\RSACryption.cs" />
+    <Compile Include="字符串操作类\GuidHelper.cs" />
+    <Compile Include="字符串操作类\StringHelper.cs" />
+    <Compile Include="数据验证类\ValidateHelper.cs" />
+    <Compile Include="文件操作类\FileHelper.cs" />
+    <Compile Include="日期时间类\DateTimeHelper.cs" />
+    <Compile Include="类型转换类\ConverHelper.cs" />
+    <Compile Include="网络操作类\HttpHelper.cs" />
+    <Compile Include="网络操作类\HttpParameter.cs" />
+    <Compile Include="网络操作类\MailHelper.cs" />
+    <Compile Include="网络操作类\NetHelper.cs" />
+    <Compile Include="网络操作类\WebSafe.cs" />
+    <Compile Include="网络操作类\WebServiceHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="自定义异常\CustomException.cs" />
+    <Compile Include="配置文件类\ConfigHelper.cs" />
+    <Compile Include="随机数帮助类\RandomHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="SolutionItems\BarcodeLib.1.0.0.23\BarcodeLib.1.0.0.23.nupkg" />
+    <None Include="SolutionItems\BarcodeLib.1.0.0.23\lib\LICENSE" />
+    <None Include="SolutionItems\log4net.2.0.8\log4net.2.0.8.nupkg" />
+    <None Include="SolutionItems\Newtonsoft.Json.6.0.4\Newtonsoft.Json.6.0.4.nupkg" />
+    <None Include="SolutionItems\Newtonsoft.Json.6.0.4\tools\install.ps1" />
+    <None Include="SolutionItems\QrCode.Net.0.4.0.0\lib\netcore45\Gma.QrCodeNet.Encoding.pri" />
+    <None Include="SolutionItems\QrCode.Net.0.4.0.0\QrCode.Net.0.4.0.0.nupkg" />
+    <None Include="SolutionItems\ZPL\dll一键安装.bat" />
+    <None Include="SolutionItems\ZPL\fnthex.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SolutionItems\BarcodeLib.1.0.0.23\lib\net20\BarcodeLib.dll" />
+    <Content Include="SolutionItems\BarcodeLib.1.0.0.23\lib\Release Notes.txt" />
+    <Content Include="SolutionItems\log4net.2.0.8\lib\net20-full\log4net.dll" />
+    <Content Include="SolutionItems\log4net.2.0.8\lib\net20-full\log4net.xml" />
+    <Content Include="SolutionItems\log4net.2.0.8\lib\net35-client\log4net.dll" />
+    <Content Include="SolutionItems\log4net.2.0.8\lib\net35-client\log4net.xml" />
+    <Content Include="SolutionItems\log4net.2.0.8\lib\net35-full\log4net.dll" />
+    <Content Include="SolutionItems\log4net.2.0.8\lib\net35-full\log4net.xml" />
+    <Content Include="SolutionItems\log4net.2.0.8\lib\net40-client\log4net.dll" />
+    <Content Include="SolutionItems\log4net.2.0.8\lib\net40-client\log4net.xml" />
+    <Content Include="SolutionItems\log4net.2.0.8\lib\net40-full\log4net.dll" />
+    <Content Include="SolutionItems\log4net.2.0.8\lib\net40-full\log4net.xml" />
+    <Content Include="SolutionItems\log4net.2.0.8\lib\net45-full\log4net.dll" />
+    <Content Include="SolutionItems\log4net.2.0.8\lib\net45-full\log4net.xml" />
+    <Content Include="SolutionItems\log4net.2.0.8\lib\netstandard1.3\log4net.dll" />
+    <Content Include="SolutionItems\Newtonsoft.Json.6.0.4\lib\net20\Newtonsoft.Json.dll" />
+    <Content Include="SolutionItems\Newtonsoft.Json.6.0.4\lib\net20\Newtonsoft.Json.xml" />
+    <Content Include="SolutionItems\Newtonsoft.Json.6.0.4\lib\net35\Newtonsoft.Json.dll" />
+    <Content Include="SolutionItems\Newtonsoft.Json.6.0.4\lib\net35\Newtonsoft.Json.xml" />
+    <Content Include="SolutionItems\Newtonsoft.Json.6.0.4\lib\net40\Newtonsoft.Json.dll" />
+    <Content Include="SolutionItems\Newtonsoft.Json.6.0.4\lib\net40\Newtonsoft.Json.xml" />
+    <Content Include="SolutionItems\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll" />
+    <Content Include="SolutionItems\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.xml" />
+    <Content Include="SolutionItems\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.dll" />
+    <Content Include="SolutionItems\Newtonsoft.Json.6.0.4\lib\netcore45\Newtonsoft.Json.xml" />
+    <Content Include="SolutionItems\Newtonsoft.Json.6.0.4\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="SolutionItems\Newtonsoft.Json.6.0.4\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="SolutionItems\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="SolutionItems\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="SolutionItems\NPOI\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="SolutionItems\NPOI\NPOI.dll" />
+    <Content Include="SolutionItems\NPOI\NPOI.OOXML.dll" />
+    <Content Include="SolutionItems\NPOI\NPOI.OpenXml4Net.dll" />
+    <Content Include="SolutionItems\NPOI\NPOI.OpenXmlFormats.dll" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\net35\Gma.QrCodeNet.Encoding.dll" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\net35\Gma.QrCodeNet.Encoding.pdb" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\net35\Gma.QrCodeNet.Encoding.xml" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\net40\Gma.QrCodeNet.Encoding.dll" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\net40\Gma.QrCodeNet.Encoding.pdb" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\net40\Gma.QrCodeNet.Encoding.XML" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.dll" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.pdb" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.xml" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\netcore45\Gma.QrCodeNet.Encoding.dll" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\netcore45\Gma.QrCodeNet.Encoding.pdb" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\netcore45\Gma.QrCodeNet.Encoding.xml" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\sl5\Gma.QrCodeNet.Encoding.dll" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\sl5\Gma.QrCodeNet.Encoding.pdb" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\lib\sl5\Gma.QrCodeNet.Encoding.xml" />
+    <Content Include="SolutionItems\QrCode.Net.0.4.0.0\NuGet.exe" />
+    <Content Include="SolutionItems\ZPL\fnthex32.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
